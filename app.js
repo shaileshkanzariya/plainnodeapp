@@ -1,9 +1,13 @@
-var restify = require('restify');
+//var restify = require('restify');
+var express = require('express');
 
-var server = restify.createServer();
+var server = new express();
 
 server.get('/test', function (req, res, next) {
    res.send('I am here');
+});
+server.get('/', function (req, res, next) {
+   res.send('I am at root');
 });
 
 server.listen(8081, function() {
